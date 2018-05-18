@@ -37,11 +37,22 @@ export class BeerComponent implements OnInit{
     }
 
     get ClickDropdown() {
-        return this.itemsPerPage;
+        return 0;
     }
 
     set ClickDropdown(value: number) {
         this.itemsPerPage = value;
+        this._svc.paging(this.itemsPerPage, this.page).subscribe(result => this.extractData(result));
+    }
+
+    public ClickBack(){
+        if (this.page>1)
+            this.page--;
+        this._svc.paging(this.itemsPerPage, this.page).subscribe(result => this.extractData(result));
+    }
+
+    public ClickNext(){
+        this.page++;
         this._svc.paging(this.itemsPerPage, this.page).subscribe(result => this.extractData(result));
     }
 }

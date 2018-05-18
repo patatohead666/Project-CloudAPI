@@ -1,16 +1,25 @@
 <br>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-3">
-            items per page
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickBack()">back</button>
+        </div>
+        <div class="col-2">
+            items per page:
             <select class="form-control" [(ngModel)]="ClickDropdown">
+                <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
+                <option value="75">75</option>
                 <option value="80">80</option>
             </select>
         </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickNext()">next page</button>
+        </div>
     </div>
 </div>
+
 
 
 <div class="container" *ngFor="let beer of BeerData">
@@ -57,6 +66,20 @@
     </div>
     <br>
 </div>
+
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickBack()">back</button>
+        </div>
+
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickNext()">next page</button>
+        </div>
+    </div>
+</div>
+<br>
 
 
 <!--
