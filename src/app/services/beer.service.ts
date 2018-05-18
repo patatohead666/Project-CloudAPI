@@ -11,6 +11,11 @@ export class BeerService {
         return this._http.get<RootObject[]>("https://api.punkapi.com/v2/beers")
         //.do(data => { console.log(JSON.stringify(data)) }); //Test om te zien of de data wordt opgehaald
     }
+    paging(items, page): Observable<RootObject[]> {
+        return this._http.get<RootObject[]>("https://api.punkapi.com/v2/beers?page="+page+"&per_page="+items)
+        //.do(data => { console.log(JSON.stringify(data)) }); //Test om te zien of de data wordt opgehaald
+    }
+
 }
 
 export interface RootObject {

@@ -9,7 +9,8 @@ import { BeerService, RootObject } from '../services/beer.service'
 export class BeerComponent implements OnInit{
     BeerData: iBeerDetails[]
     test: number
-    _nr: number = 0;
+    itemsPerPage: number = 25;
+    page: number = 1;
     testimage: string;
 
     constructor(private _svc: BeerService) { }
@@ -36,11 +37,12 @@ export class BeerComponent implements OnInit{
     }
 
     get ClickDropdown() {
-        return this._nr;
+        return this.itemsPerPage;
     }
 
     set ClickDropdown(value: number) {
-        this._nr = value;
+        this.itemsPerPage = value;
+        this._svc.paging(this.itemsPerPage, this.page).subscribe(result => this.extractData(result));
     }
 }
 

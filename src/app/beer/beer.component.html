@@ -1,4 +1,18 @@
 <br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <strong> fzefzfr </strong>
+            <select class="form-control" [(ngModel)]="ClickDropdown">
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="80">80</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
 <div class="container" *ngFor="let beer of BeerData">
 
     <div class="card">
@@ -33,7 +47,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-1 col-md-auto row align-items-center">                    
+                <div class="col-1 col-md-auto row align-items-center">
                     <li class="list-group-item">
                         <img src="{{beer.image}}" alt="Beer image" height="225" />
                     </li>
