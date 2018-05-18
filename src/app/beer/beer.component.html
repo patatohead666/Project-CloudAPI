@@ -1,17 +1,15 @@
 <br>
 <div class="container" *ngFor="let beer of BeerData">
 
-    <div class="row">
+    <div class="card">
 
+        <div class="card-header">
+            <h2>{{beer.name}}</h2>
+        </div>
 
-        <div class="col-9">
-            <div class="card">
-
-                <div class="card-header">
-                    <h2>{{beer.name}}</h2>
-                </div>
-
-                <div class="card-block" *ngIf="BeerData">
+        <div class="card-block" *ngIf="BeerData">
+            <div class="row">
+                <div class="col-10">
                     <ul class="list-group">
                         <li class="list-group-item">
                             tagline:
@@ -33,27 +31,17 @@
                             first brewed:
                             <strong>{{beer.firstBrewed}}</strong>
                         </li>
-
                     </ul>
                 </div>
-
+                <div class="col-1 col-md-auto row align-items-center">                    
+                    <li class="list-group-item">
+                        <img src="{{beer.image}}" alt="Beer image" height="225" />
+                    </li>
+                </div>
             </div>
-            <br>
-
         </div>
-
-        <div class="col-3 col-md-auto">
-            <h1> </h1>
-            <br>
-            <br>
-            <br>
-            <li class="list-group-item">
-                <img src="{{beer.image}}" alt="Beer image" height="225" />
-            </li>
-
-        </div>
-
     </div>
+    <br>
 </div>
 
 
