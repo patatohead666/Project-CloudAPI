@@ -8,10 +8,8 @@ import { BeerService, RootObject } from '../services/beer.service'
 
 export class BeerComponent implements OnInit{
     BeerData: iBeerDetails[]
-    test: number
     itemsPerPage: number = 25;
     page: number = 1;
-    testimage: string;
 
     constructor(private _svc: BeerService) { }
 
@@ -19,7 +17,6 @@ export class BeerComponent implements OnInit{
         this._svc.get().subscribe(result => this.extractData(result));
     }
     extractData(result: RootObject[]) {
-        this.test = 5
         if (result != null) {
             this.BeerData = new Array(result.length)
             for (var i = 0; i < result.length; i++) {
@@ -32,7 +29,6 @@ export class BeerComponent implements OnInit{
                     firstBrewed: result[i].first_brewed,
                 })
             }
-            this.testimage= result[1].image_url
         }
     }
 
