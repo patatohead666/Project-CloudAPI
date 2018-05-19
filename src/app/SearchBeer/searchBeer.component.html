@@ -1,4 +1,11 @@
-<input type="text" [(ngModel)] = id/>
+<br>
+Food pairing:<input type="text" [(ngModel)] = foodPairing/>
+Beer name:<input type="text" [(ngModel)] = beerName/>
+Brewed before (mm-yyyy):<input type="text" [(ngModel)] = brewedBefore/>
+Brewed after (mm-yyyy):<input type="text" [(ngModel)] = brewedAfter/>
+<button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="filter()">filter</button><br>
+
+Id:<input type="text" [(ngModel)] = id/>
 <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="findId()">search id</button>
 
 

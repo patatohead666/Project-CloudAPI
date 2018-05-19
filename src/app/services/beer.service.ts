@@ -16,7 +16,9 @@ export class BeerService {
     searchId(id): Observable<RootObject[]>{
         return this._http.get<RootObject[]>("https://api.punkapi.com/v2/beers/"+id)
     }
-
+    filter(search): Observable<RootObject[]>{
+        return this._http.get<RootObject[]>("https://api.punkapi.com/v2/beers"+search)
+    }
 }
 
 export interface RootObject {
