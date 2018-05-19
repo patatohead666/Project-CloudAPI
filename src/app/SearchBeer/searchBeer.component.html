@@ -1,16 +1,18 @@
 <br>
-Food pairing:<input type="text" [(ngModel)] = foodPairing/>
-Beer name:<input type="text" [(ngModel)] = beerName/>
-Brewed before (mm-yyyy):<input type="text" [(ngModel)] = brewedBefore/>
-Brewed after (mm-yyyy):<input type="text" [(ngModel)] = brewedAfter/>
-<button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="filter()">filter</button><br>
-
-Id:<input type="text" [(ngModel)] = id/>
-<button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="findId()">search id</button>
-
+<div class="container" *ngFor="let beer of BeerData">
+    Food pairing:
+    <input type="text" [(ngModel)]=f oodPairing/> Beer name:
+    <input type="text" [(ngModel)]=b eerName/> Brewed before (mm-yyyy):
+    <input type="text" [(ngModel)]=b rewedBefore/> Brewed after (mm-yyyy):
+    <input type="text" [(ngModel)]=b rewedAfter/>
+    <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="filter()">filter</button>
+    <br> Id:
+    <input type="text" [(ngModel)]=i d/>
+    <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="findId()">search id</button>
+</div>
 
 <br>
-<div class="container" *ngFor="let beer of BeerData">
+<div class="container" *ngFor="let beer of BeerData; let i = index">
 
     <div class="card">
 
@@ -27,20 +29,20 @@ Id:<input type="text" [(ngModel)] = id/>
                             <strong>{{beer.tagline}}</strong>
                         </li>
                         <li class="list-group-item">
-                            id:
-                            <strong>{{beer.id}}</strong>
-                        </li>
-                        <li class="list-group-item">
-                            name:
-                            <strong>{{beer.name}}</strong>
-                        </li>
-                        <li class="list-group-item">
                             description:
                             <strong>{{beer.description}}</strong>
                         </li>
                         <li class="list-group-item">
+                            food pairings:
+                            <strong><a *ngFor="let food of beer.foodPairings">{{food}} , </a></strong>                            
+                        </li>
+                        <li class="list-group-item">
                             first brewed:
                             <strong>{{beer.firstBrewed}}</strong>
+                        </li>
+                        <li class="list-group-item">
+                            Id:
+                            <strong>{{beer.id}}</strong>
                         </li>
                     </ul>
                 </div>

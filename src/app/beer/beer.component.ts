@@ -27,6 +27,7 @@ export class BeerComponent implements OnInit{
                     description: result[i].description,
                     image: result[i].image_url,
                     firstBrewed: result[i].first_brewed,
+                    foodPairings: result[i].food_pairing,
                 })
             }
         }
@@ -60,4 +61,5 @@ export interface iBeerDetails {
     description: string;
     image: string;
     firstBrewed: string;
+    foodPairings: string[];
 }

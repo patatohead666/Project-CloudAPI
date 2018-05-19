@@ -39,20 +39,20 @@
                             <strong>{{beer.tagline}}</strong>
                         </li>
                         <li class="list-group-item">
-                            id:
-                            <strong>{{beer.id}}</strong>
-                        </li>
-                        <li class="list-group-item">
-                            name:
-                            <strong>{{beer.name}}</strong>
-                        </li>
-                        <li class="list-group-item">
                             description:
                             <strong>{{beer.description}}</strong>
                         </li>
                         <li class="list-group-item">
+                            food pairings:
+                            <strong><a *ngFor="let food of beer.foodPairings">{{food}} , </a></strong>                            
+                        </li>
+                        <li class="list-group-item">
                             first brewed:
                             <strong>{{beer.firstBrewed}}</strong>
+                        </li>
+                        <li class="list-group-item">
+                            Id:
+                            <strong>{{beer.id}}</strong>
                         </li>
                     </ul>
                 </div>
