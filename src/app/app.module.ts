@@ -11,6 +11,7 @@ import { BeerComponent } from './beer/beer.component'
 
 import { HttpClientModule } from '@angular/common/http';
 import { BeerService } from './services/beer.service';
+import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
 
 
 @NgModule({
@@ -18,14 +19,17 @@ import { BeerService } from './services/beer.service';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    BeerComponent
+    BeerComponent,
+    SearchBeerComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},
-      { path: '', component: HomeComponent}
+      { path: '', component: HomeComponent},
+      { path: 'search', component: SearchBeerComponent},
+      { path: '*', component: HomeComponent}
     ], { useHash: true }),
     FormsModule,
     HttpClientModule,
