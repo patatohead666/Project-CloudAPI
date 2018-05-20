@@ -1,0 +1,11 @@
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\bin\Debug\netcoreapp2.1\RestAPI.deps.json
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\bin\Debug\netcoreapp2.1\RestAPI.runtimeconfig.json
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\bin\Debug\netcoreapp2.1\RestAPI.runtimeconfig.dev.json
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\bin\Debug\netcoreapp2.1\RestAPI.dll
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\bin\Debug\netcoreapp2.1\RestAPI.pdb
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.csprojResolveAssemblyReference.cache
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.csproj.CoreCompileInputs.cache
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.AssemblyInfoInputs.cache
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.AssemblyInfo.cs
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.dll
+D:\2EA\CloudAPI\Webframeproject\Project\RestAPI\RestAPI\obj\Debug\netcoreapp2.1\RestAPI.pdb

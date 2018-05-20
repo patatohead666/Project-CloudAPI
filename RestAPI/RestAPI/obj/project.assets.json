@@ -11598,11 +11598,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\2EA\\CloudAPI\\Webframeproject\\RestAPI\\RestAPI\\RestAPI.csproj",
+      "projectUniqueName": "D:\\2EA\\CloudAPI\\Webframeproject\\Project\\RestAPI\\RestAPI\\RestAPI.csproj",
       "projectName": "RestAPI",
-      "projectPath": "D:\\2EA\\CloudAPI\\Webframeproject\\RestAPI\\RestAPI\\RestAPI.csproj",
+      "projectPath": "D:\\2EA\\CloudAPI\\Webframeproject\\Project\\RestAPI\\RestAPI\\RestAPI.csproj",
       "packagesPath": "C:\\Users\\Yorick\\.nuget\\packages\\",
-      "outputPath": "D:\\2EA\\CloudAPI\\Webframeproject\\RestAPI\\RestAPI\\obj\\",
+      "outputPath": "D:\\2EA\\CloudAPI\\Webframeproject\\Project\\RestAPI\\RestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
-    public class DBIntitializer
+    public class DbIntitializer
     {
-        public static void Initialize(LibraryContext context)
+        public static void Initialize(CookBook context)
         {
             //Create the db if not yet exists
             context.Database.EnsureCreated();
@@ -49,14 +50,15 @@ namespace Model
                 var Meal = new Meal()
                 {
                     Name = "spaghetti",
-                    Ingredients = { Carrot, Patato }
+                    //Ingredients = [ Carrot, Patato ],
+                     Ingredients = new List<Ingredient> {Carrot, Patato}
                 };
                 //Add the book to the collection of books
                 context.Meals.Add(Meal);
                 Meal = new Meal()
                 {
                     Name = "Pizza",
-                    Ingredients = { apple, Ananas }
+                    Ingredients = new List<Ingredient> { apple, Ananas }
 
                 };
                 context.Meals.Add(Meal);

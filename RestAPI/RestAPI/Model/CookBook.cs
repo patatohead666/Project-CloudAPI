@@ -2,9 +2,9 @@
 
 namespace Model
 {
-    public class LibraryContext : DbContext
+    public class CookBook : DbContext
     {
-        public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
+        public CookBook(DbContextOptions<CookBook> options) : base(options)
         {
         }
         public DbSet<Meal> Meals { get; set; }
