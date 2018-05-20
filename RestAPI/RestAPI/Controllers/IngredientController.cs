@@ -63,13 +63,53 @@ namespace RestAPI.Controllers
         {
             var ingredient = context.Ingredients
                         .SingleOrDefault(d => d.Id == id);
-                        //.Include(d => d.Author)
 
 
             if (ingredient == null)
                 return NotFound();
 
             return Ok(ingredient);
+        }
+
+        [HttpPost]
+        public IActionResult CreateIngredient([FromBody] Ingredient newIngredient)
+        {
+            //Book toevoegen in de databank, Id wordt dan ook toegekend
+            context.Ingredients.Add(newIngredient);
+            context.SaveChanges();
+            // Stuur een result 201 met het boek als content
+            return Created("", newIngredient);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateIngredient([FromBody] Ingredient updateIngredient)
+        {
+            var orgIngredient = context.Ingredients.Find(updateIngredient.Id);
+            if (orgIngredient == null)
+                return NotFound();
+
+            orgIngredient.Name = updateIngredient.Name;
+            orgIngredient.Calories = updateIngredient.Calories;
+            orgIngredient.Fat = updateIngredient.Fat;
+            orgIngredient.Sugars = updateIngredient.Sugars;
+
+            context.SaveChanges();
+            return Ok(orgIngredient);
+        }
+
+        [Route("{id}")]
+        [HttpDelete]
+        public IActionResult DeleteIngredient(int id)
+        {
+            var ingredient = context.Ingredients.Find(id);
+            if (ingredient == null)
+                return NotFound();
+
+            //book verwijderen ..
+            context.Ingredients.Remove(ingredient);
+            context.SaveChanges();
+            //Standaard response 204 bij een gelukte delete
+            return NoContent();
         }
     }
 }
