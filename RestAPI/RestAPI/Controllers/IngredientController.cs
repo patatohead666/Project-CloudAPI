@@ -81,10 +81,11 @@ namespace RestAPI.Controllers
             return Created("", newIngredient);
         }
 
-        [HttpPut]
-        public IActionResult UpdateIngredient([FromBody] Ingredient updateIngredient)
+        [Route("{id}")]   // api/v1/ingredients/2
+        [HttpPost]
+        public IActionResult UpdateIngredient([FromBody] Ingredient updateIngredient, int id)
         {
-            var orgIngredient = context.Ingredients.Find(updateIngredient.Id);
+            var orgIngredient = context.Ingredients.Find(id);
             if (orgIngredient == null)
                 return NotFound();
 
