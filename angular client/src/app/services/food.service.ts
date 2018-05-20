@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { interceptingHandler } from "@angular/common/http/src/module";
 
 @Injectable()
-export class BeerService {
+export class FoodService {
     constructor(private _http: HttpClient) { }
 
     get(): Observable<RootObject[]> {
@@ -12,7 +12,7 @@ export class BeerService {
     }
 }
 
-interface RootObject {
+export interface RootObject {
     id: number;
     name: string;
     calories: number;

@@ -12,6 +12,8 @@ import { BeerComponent } from './beer/beer.component'
 import { HttpClientModule } from '@angular/common/http';
 import { BeerService } from './services/beer.service';
 import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
+import { FoodService } from './services/food.service';
+import { FoodComponent } from './food/food.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
     HomeComponent,
     NavbarComponent,
     BeerComponent,
-    SearchBeerComponent
+    SearchBeerComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},
       { path: '', component: HomeComponent},
-      { path: 'search', component: SearchBeerComponent},
+      { path: 'beer', component: SearchBeerComponent},
+      { path: 'food', component: FoodComponent},
       { path: '*', component: HomeComponent}
     ], { useHash: true }),
     FormsModule,
@@ -36,7 +40,8 @@ import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
-    BeerService
+    BeerService,
+    FoodService
   ],
   bootstrap: [AppComponent]
 })

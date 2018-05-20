@@ -55,7 +55,6 @@ export class SearchBeerComponent implements OnInit
             searchString = "/" + this.id
 
         this._svc.filter(searchString).subscribe(result => this.extractData(result));
-        alert(searchString)
     }
 }
 
