@@ -19,16 +19,21 @@ export class FoodComponent implements OnInit{
     ngOnInit() {
         this._svc.get().subscribe(result => this.Food = result);
     }
-    put(){
+    addIngredient(){
         var ingredient : RootObject = ({
             id: 0,
-            name: "b",
-            calories:5,
-            fat:5,
-            sugars:5
+            name: this.name,
+            calories:this.calories,
+            fat:this.calories,
+            sugars:this.sugars
         })
 
-        this._svc.postIngredient(ingredient).subscribe()
-            
+        this._svc.postIngredient(ingredient).subscribe()  
+        
+        this.name = ""
+        this.calories = undefined
+        this.fat = undefined
+        this.sugars = undefined
+        alert("ingredient added")
     }
 }

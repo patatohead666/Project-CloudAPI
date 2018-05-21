@@ -1,5 +1,12 @@
-<input type="text" [(ngModel)]= name/>
-<input type="text" [(ngModel)]= calories/>
-<input type="text" [(ngModel)]= fat/>
-<input type="text" [(ngModel)]= sugars/>
-<button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="put()">put</button>
+<br>
+<div class="container">
+    Name:
+    <input type="text" [(ngModel)]=name/>
+    Calories:
+    <input type="text" [(ngModel)]=calories/>
+    Fat:
+    <input type="text" [(ngModel)]=fat/>
+    Sugars:
+    <input type="text" [(ngModel)]=sugars/>
+    <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="addIngredient()">Add ingredient</button>
+</div>
