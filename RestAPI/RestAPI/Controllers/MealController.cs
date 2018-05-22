@@ -64,7 +64,7 @@ namespace RestAPI.Controllers
         [HttpPost]
         public IActionResult CreateMeal([FromBody] Meal newMeal)
         {
-            newMeal.MostUsedIngredient = context.Ingredients.SingleOrDefault(d => d.Id == newMeal.MostUsedIngredient.Id);
+            newMeal.MostUsedIngredient = context.Ingredients.SingleOrDefault(d => d.Name == newMeal.MostUsedIngredient.Name);
             if(newMeal.MostUsedIngredient == null)
                 return NotFound();
             context.Meals.Add(newMeal);
@@ -80,7 +80,7 @@ namespace RestAPI.Controllers
             if(orgMeal == null)
                 return NotFound();
 
-            orgMeal.MostUsedIngredient = context.Ingredients.SingleOrDefault(d => d.Id == updateMeal.MostUsedIngredient.Id);
+            orgMeal.MostUsedIngredient = context.Ingredients.SingleOrDefault(d => d.Name == updateMeal.MostUsedIngredient.Name);
             orgMeal.Name = updateMeal.Name;
             if(orgMeal.MostUsedIngredient == null)
                 return NotFound();
