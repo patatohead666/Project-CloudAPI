@@ -21,12 +21,13 @@ export class MealComponent implements OnInit{
         var meal : Meal = ({
             id: 0,
             name: this.name,
-            mostUsedIngredient: 
-                ({id: 0,
+            mostUsedIngredient: ({ 
+                id: 0,
                 name: this.ingredient,
                 calories: 0,
                 fat: 0,
-                sugars: 0})
+                sugars: 0
+            })
             
         })
 
@@ -36,10 +37,10 @@ export class MealComponent implements OnInit{
         window.location.reload() //reload page after adding ingredient
     }
     ClickBack(){
-
         if(this.page>0){
             this.page--
-            this._svc.getMeals(this.page).subscribe(result => this.Meals = result);        }
+            this._svc.getMeals(this.page).subscribe(result => this.Meals = result);        
+        }
     }
     ClickNext()
     {

@@ -18,7 +18,7 @@ export class FoodService {
     }
 
     getMeals(page): Observable<Meal[]> {
-        return this._http.get<Meal[]>("http://localhost:5000/api/v1/meals?length=5&page="+page)
+        return this._http.get<Meal[]>("http://localhost:5000/api/v1/meals?length=5&page=" + page)
     }
 
     postMeals(meal: Meal ): Observable<Meal[]> {

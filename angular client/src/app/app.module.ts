@@ -4,19 +4,17 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BeerComponent } from './beer/beer.component'
-
-import { HttpClientModule } from '@angular/common/http';
-import { BeerService } from './services/beer.service';
-import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
-import { FoodService } from './services/food.service';
-
 import { MealComponent } from './meals/meals.component';
 import { IngredientComponent } from './ingredients/ingredients.component';
+import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
 
+import { BeerService } from './services/beer.service';
+import { FoodService } from './services/food.service';
 
 @NgModule({
   declarations: [
