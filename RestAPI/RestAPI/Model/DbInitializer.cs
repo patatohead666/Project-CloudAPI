@@ -51,15 +51,14 @@ namespace Model
                 {
                     Name = "spaghetti",
                     //Ingredients = [ Carrot, Patato ],
-                     Ingredients = new List<Ingredient> {Carrot, Patato}
+                    MostUsedIngredient = Patato
                 };
                 //Add the book to the collection of books
                 context.Meals.Add(Meal);
                 Meal = new Meal()
                 {
                     Name = "Pizza",
-                    Ingredients = new List<Ingredient> { apple, Ananas }
-
+                    MostUsedIngredient = Ananas,
                 };
                 context.Meals.Add(Meal);
                 //Save all the changes to the DB
