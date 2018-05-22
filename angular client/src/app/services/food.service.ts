@@ -17,6 +17,14 @@ export class FoodService {
         return this._http.post<RootObject[]>("http://localhost:5000/api/v1/ingredients", ingredient)
     }
 
+    getMeals(page): Observable<Meal[]> {
+        return this._http.get<Meal[]>("http://localhost:5000/api/v1/meals?length=5&page="+page)
+    }
+
+    postMeals(meal: Meal ): Observable<Meal[]> {
+        return this._http.post<Meal[]>("http://localhost:5000/api/v1/meals", meal)
+    }
+    
 }
 
 export interface RootObject {
@@ -26,3 +34,9 @@ export interface RootObject {
     fat: number;
     sugars: number;
   }
+
+export interface Meal{
+    id: number;
+    name: string;
+    mostUsedIngredient: RootObject
+}

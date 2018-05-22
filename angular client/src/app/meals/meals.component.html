@@ -1,38 +1,47 @@
-<div class="container" *ngFor="let beer of BeerData">
+<br>
+<div class="container">
+    Name:
+    <input type="text" [(ngModel)]=name/>
+    Most used ingrediënt:
+    <input type="text" [(ngModel)]=ingredient/>
+    <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="addMeal()">Add meal</button>
+</div>
 
+
+<div class="container" *ngFor="let meal of Meals">
+    <br>
     <div class="card">
 
         <div class="card-header">
-            <h2>{{beer.name}}</h2>
+            <h2>{{meal.name}}</h2>
         </div>
 
-        <div class="card-block" *ngIf="BeerData">
-
+        <div class="card-block" *ngIf="Meals">
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    tagline:
-                    <strong>{{beer.tagline}}</strong>
-                </li>
-                <li class="list-group-item">
-                    description:
-                    <strong>{{beer.description}}</strong>
-                </li>
-                <li class="list-group-item">
-                    food pairings:
-                    <strong>
-                        <a *ngFor="let food of beer.foodPairings">{{food}} , </a>
-                    </strong>
-                </li>
-                <li class="list-group-item">
-                    first brewed:
-                    <strong>{{beer.firstBrewed}}</strong>
+                    Main ingredient:
+                    <strong>{{meal.mostUsedIngredient.name}}</strong>
                 </li>
                 <li class="list-group-item">
                     Id:
-                    <strong>{{beer.id}}</strong>
+                    <strong>{{meal.id}}</strong>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickBack()">back</button>
+        </div>
+
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickNext()">next page</button>
         </div>
     </div>
 </div>
