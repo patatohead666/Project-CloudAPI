@@ -1,0 +1,59 @@
+<br>
+<div class="container">
+    Name:
+    <input type="text" [(ngModel)]=name/>
+    Calories:
+    <input type="text" [(ngModel)]=calories/>
+    Fat:
+    <input type="text" [(ngModel)]=fat/>
+    Sugars:
+    <input type="text" [(ngModel)]=sugars/>
+    <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="addIngredient()">Add ingredient</button>
+</div>
+
+
+<div class="container" *ngFor="let ingredient of ingredients">
+    <br>
+    <div class="card">
+
+        <div class="card-header">
+            <h2>{{ingredient.name}}</h2>
+        </div>
+
+        <div class="card-block" *ngIf="ingredients">
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Calories per 100g:
+                    <strong>{{ingredient.calories}}</strong>
+                </li>
+                <li class="list-group-item">
+                    Fat per 100g:
+                    <strong>{{ingredient.fat}}</strong>
+                </li>
+                <li class="list-group-item">
+                    Sugars per 100g:
+                    <strong>{{ingredient.sugars}}</strong>
+                </li>
+                <li class="list-group-item">
+                    Id:
+                    <strong>{{ingredient.id}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickBack()">back</button>
+        </div>
+
+        <div class="col-2">
+            <button type="button" class="btn btn-indigo waves-light" mdbWavesEffect (click)="ClickNext()">next page</button>
+        </div>
+    </div>
+</div>

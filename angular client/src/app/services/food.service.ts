@@ -9,8 +9,8 @@ import { post } from "selenium-webdriver/http";
 export class FoodService {
     constructor(private _http: HttpClient) { }
 
-    get(): Observable<RootObject[]> {
-        return this._http.get<RootObject[]>("http://localhost:5000/api/v1/ingredients")
+    getIngredients(page): Observable<RootObject[]> {
+        return this._http.get<RootObject[]>("http://localhost:5000/api/v1/ingredients?length=5&page="+page)
     }
 
     postIngredient(ingredient: RootObject ): Observable<RootObject[]> {

@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BeerService } from './services/beer.service';
 import { SearchBeerComponent } from './SearchBeer/searchBeer.component';
 import { FoodService } from './services/food.service';
-import { FoodComponent } from './food/food.component';
+
+import { MealComponent } from './meals/meals.component';
+import { IngredientComponent } from './ingredients/ingredients.component';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { FoodComponent } from './food/food.component';
     NavbarComponent,
     BeerComponent,
     SearchBeerComponent,
-    FoodComponent
+    IngredientComponent,
+    MealComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { FoodComponent } from './food/food.component';
       { path: 'home', component: HomeComponent},
       { path: '', component: HomeComponent},
       { path: 'beer', component: SearchBeerComponent},
-      { path: 'food', component: FoodComponent},
+      { path: 'food', component: IngredientComponent},
+      { path: 'meals', component: MealComponent},
       { path: '*', component: HomeComponent}
     ], { useHash: true }),
     FormsModule,

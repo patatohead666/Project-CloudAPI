@@ -4,20 +4,22 @@ import { isNgTemplate } from '@angular/compiler';
 
 @Component({
     selector: 'food',
-    templateUrl: './food.component.html'
+    templateUrl: './ingredients.component.html'
 })
 
-export class FoodComponent implements OnInit{
-    Food: RootObject[]
+export class IngredientComponent implements OnInit{
+    ingredients: RootObject[]
+    page: number=0
     name: string
     calories: number
     fat: number
     sugars: number
 
+
     constructor(private _svc: FoodService) { }
 
     ngOnInit() {
-        this._svc.get().subscribe(result => this.Food = result);
+        this._svc.getIngredients(this.page).subscribe(result => this.ingredients = result);
     }
     addIngredient(){
         var ingredient : RootObject = ({
@@ -30,10 +32,19 @@ export class FoodComponent implements OnInit{
 
         this._svc.postIngredient(ingredient).subscribe()  
         
-        this.name = ""
-        this.calories = undefined
-        this.fat = undefined
-        this.sugars = undefined
         alert("ingredient added")
+        window.location.reload() //reload page after adding ingredient
+    }
+    ClickBack(){
+
+        if(this.page>0){
+            this.page--
+            this._svc.getIngredients(this.page).subscribe(result => this.ingredients = result);
+        }
+    }
+    ClickNext()
+    {
+        this.page++
+        this._svc.getIngredients(this.page).subscribe(result => this.ingredients = result);
     }
 }
