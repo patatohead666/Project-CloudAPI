@@ -2,16 +2,16 @@ var ex = require('express');
 const request = require('request')
 const cookie = require('cookie-parser')
 
-
 const hostname = 'localhost';
 const port = 4200;
-const server = ex();
-
+var server = ex();
 
 const clientID = '265831048484-laq2hs0ran6sp2mb8n0sobdleo3cdt5v.apps.googleusercontent.com'
 const secret = 'ZlhtHhsbdMHo7F8P83Ji28d1'
-const redirectUrl = `http%3A%2F%2Flocalhost%3A${port}%2Fgoogle-callback`
+const redirectUrl = `http%3A%2F%2F${hostname}%3A${port}%2Fgoogle-callback`
 
+
+server.use(cookie());
 
 //profiel pagina. 
 //Er wordt eerst de naam en foto in geplaatst vooraleer deze wordt teruggestuurd naar de browser
@@ -34,8 +34,6 @@ const profile = `<!DOCTYPE html>
     {{info | json}}
 </body>
 </html>`
-
-server.use(cookie());
 
 server.get('/', (req, res, next) => {
     var cookie = req.cookies.auth;
@@ -121,8 +119,6 @@ server.get('/logout', (req, res) => {
 server.use(ex.static("views"));
 server.use(ex.static(__dirname + '/dist'));
 
-
-
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server: http://${hostname}:${port}/`);
 });
